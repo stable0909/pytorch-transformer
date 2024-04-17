@@ -11,6 +11,7 @@ class LayerNormalization(nn.Module):
         self.bias = nn.Parameter(torch.zeros(features)) # bias is a learnable parameter
 
     def forward(self, x):
+        # 归一化
         # x: (batch, seq_len, hidden_size)
          # Keep the dimension for broadcasting
         mean = x.mean(dim = -1, keepdim = True) # (batch, seq_len, 1)
